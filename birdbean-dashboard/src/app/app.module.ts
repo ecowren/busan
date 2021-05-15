@@ -4,6 +4,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
+import { APP_BASE_HREF } from '@angular/common';
+import { DashboardModule } from './dashboard/dashboard.module';
+import { routes } from './app.routes';
 
 @NgModule({
   imports: [
@@ -11,12 +14,16 @@ import { AppComponent } from './app.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    RouterModule
+    RouterModule.forRoot(routes, { useHash: true}),
+    DashboardModule
   ],
   declarations: [
     AppComponent,
   ],
-  providers: [],
+  providers: [{
+    provide: APP_BASE_HREF,
+    useValue: '/'
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

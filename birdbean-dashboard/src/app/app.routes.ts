@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router'
-import { SignUpRoutes } from './sign-up/sign-up.routes';
+import { DashboardRoutes } from './dashboard/dashboard.routes';
 
 export const routes: Routes = [
     {
@@ -7,5 +7,5 @@ export const routes: Routes = [
         redirectTo: 'dashboard',
         pathMatch: 'full'
     },
-    ...SignUpRoutes
+    ...DashboardRoutes,
 ];
