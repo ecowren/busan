@@ -1,1 +1,51 @@
-<h3>Hello world</h3>
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card-header card-header-danger text-center text-bold">
+                            <h1 class="card-title">BIRDBEAN</h1>
+                        </div>
+                        <form>
+                            <div class="form-horizontal">
+                                <div class="example-full-width">
+                                    <input matInput placeholder="Email" type="text" name="name" [(ngModel)]="account.name">
+                                </div>
+                                <div class="example-full-width">
+                                    <input matInput placeholder="Password" type="text" name="password" [(ngModel)]="account.password">
+                                </div>
+                            </div>
+                            <div class="clearfix">
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox" name="isRemembered"
+                                            [(ngModel)]="isRemembered">
+                                        <span class="form-check-sign">
+                                            <span class="check">{{"Remember me"}}</span>
+                                        </span>
+                                    </label>
+                                </div>
+                            </div>
+                            <button mat-raised-button type="submit" class="btn btn-info btn-block"
+                                (click)="signIn()">{{"Sign in"}}</button>
+                            <div class="clearfix">
+                                <p>
+                                    <span class="card-category text-gray">{{"Don't have an account?"}}</span>
+                                    <a routerLink="/sign-up">{{"Sign up now"}}</a>
+                                </p>
+                                <p>
+                                    <span class="card-category text-gray">{{"Forget your password?"}}</span>
+                                    <a routerLink="/sign-in/forgot-password">{{"Reset now"}}</a>
+                                </p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<loader [isLoaderVisible]='isLoading'></loader>

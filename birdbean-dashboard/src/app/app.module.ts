@@ -9,20 +9,25 @@ import { APP_BASE_HREF } from '@angular/common';
 
 import { DashboardModule } from './dashboard/dashboard.module';
 import { routes } from './app.routes';
+import { SignIndModule } from './sign-in/sign-in.module';
+import { BaseModule } from './shared';
 
 @NgModule({
   imports: [
+    BaseModule,
     BrowserModule,
     BrowserAnimationsModule,
+    DashboardModule,
     FormsModule,
-    ReactiveFormsModule,
     HttpClientModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(routes, { useHash: true}),
-    DashboardModule
+    SignIndModule
   ],
   declarations: [
     AppComponent,
   ],
+  exports:[AppComponent],
   providers: [{
     provide: APP_BASE_HREF,
     useValue: '/'
