@@ -30,7 +30,6 @@ export class SignInComponent {
 
     signIn() {
         console.log("click sign in button");
-
         if (this.isRemembered) {
             localStorage.setItem(localStorageName.accountName, this.account.name);
         }
