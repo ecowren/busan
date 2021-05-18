@@ -4,11 +4,11 @@ import { AuthService, localStorageName } from 'src/app/shared';
 import { SignInComponent } from 'src/app/sign-in/sign-in.component';
 
 export class MockRouter {
-}
+};
 
 export class MockAuthService {
     signOut(): void { }
-}
+};
 
 describe('SignInComponent Test', () => {
     let underTest: SignInComponent;
@@ -18,8 +18,8 @@ describe('SignInComponent Test', () => {
     beforeEach(() => {
         TestBed.configureTestingModule({
             providers: [
-                { provide: Router, useValue: mockRouter },
-                { provice: AuthService, useValue: mockAuthService }
+                { provide: AuthService, useValue: mockAuthService },
+                { provide: Router, useValue: mockRouter }
             ]
         });
     });
@@ -41,7 +41,6 @@ describe('SignInComponent Test', () => {
         underTest.ngOnInit();
 
         //then
-        expect(underTest.account.name).toBeNull();
         expect(underTest.isRemembered).toBeFalsy();
     });
 
@@ -66,7 +65,7 @@ describe('SignInComponent Test', () => {
         underTest.account.name = "user";
 
         //when
-        underTest.ngOnInit();
+        underTest.signIn();
 
         //then
         expect(localStorage.getItem(localStorageName.accountName)).toBe(underTest.account.name);
