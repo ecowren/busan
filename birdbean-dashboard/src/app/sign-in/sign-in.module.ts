@@ -6,7 +6,8 @@ import { SignInComponent } from './sign-in.component';
 
 @NgModule({
     imports: [
-        FormsModule
+        FormsModule,
+        BaseModule
     ],
     providers:[AuthService],
     declarations: [SignInComponent],
